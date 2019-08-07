@@ -1,0 +1,64 @@
+import React, { Component } from 'react';
+import axios from "axios";
+
+export class EnterDeets extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            firstName: "",
+            lastName: "",
+
+        };
+
+    }
+
+    makeRequest = (e) => {
+        e.preventDefault();
+
+        console.log(e.target[0].value)
+
+        let newAccount = {
+            firstName: e.target[0].value,
+            lastName: e.target[1].value,
+
+        }
+    
+    axios
+            .post("http://localhost:8086/account/createAcc", newAccount)
+
+            .then(response => {
+
+
+                this.setState({
+            data: response.data
+        });
+
+        this.props.getAll();
+
+
+
+    });
+};
+ render() {
+        return (
+            <div><h1>Create An Account</h1>
+                <form name="form" onSubmit={this.makeRequest}>
+                    
+                    <label for="repName" id="accUsernameLabel">First Name: </label>
+                    <input name="name" type="text" id="accUsername" class="form-control"  />
+                    <br />
+                    <label for="accEmail" id="accEmailLable">Last Name: </label>
+                    <input name="url" type="text" id="accEmail" class="form-control"  />
+                    <br />
+
+                    <input name="clickme" type="submit" class="btn btn-primary" value="Create Account" />
+                </form>
+               
+            </div>
+        );
+    }
+
+
+}
+ export default EnterDeets;
