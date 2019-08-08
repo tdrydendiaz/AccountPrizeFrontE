@@ -5,6 +5,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import EnterDeets from './Components/EnterDeets'
+import EnterDraw from './Components/EnterDraw'
 
 
 
@@ -40,6 +41,7 @@ export default class App extends React.Component {
           
 
           <Route exact path="/" render={() => <EnterDeets getAll={this.onLoad} data={this.state.data} />} />
+          <Route exact path="/EnterDraw" render={() => <EnterDraw getAll={this.onLoad} data={this.state.data} />} />
 
 
         </Router>

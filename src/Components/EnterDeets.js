@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export class EnterDeets extends Component {
 
@@ -23,42 +24,47 @@ export class EnterDeets extends Component {
             lastName: e.target[1].value,
 
         }
-    
-    axios
+
+        axios
             .post("http://localhost:8086/account/createAcc", newAccount)
 
             .then(response => {
 
 
                 this.setState({
-            data: response.data
-        });
+                    data: response.data
+                });
 
-        this.props.getAll();
+                this.props.getAll();
 
 
 
-    });
-};
- render() {
+            });
+
+        window.document.getElementById("clickLink").click();
+
+    };
+    render() {
         return (
             <div><h1>Create An Account</h1>
                 <form name="form" onSubmit={this.makeRequest}>
-                    
+
                     <label for="repName" id="accUsernameLabel">First Name: </label>
-                    <input name="name" type="text" id="accUsername" class="form-control"  />
+                    <input name="name" type="text" id="accUsername" class="form-control" />
                     <br />
                     <label for="accEmail" id="accEmailLable">Last Name: </label>
-                    <input name="url" type="text" id="accEmail" class="form-control"  />
+                    <input name="url" type="text" id="accEmail" class="form-control" />
                     <br />
 
+                    <Link to={"/EnterDraw"} id="clickLink"></Link>
                     <input name="clickme" type="submit" class="btn btn-primary" value="Create Account" />
+
                 </form>
-               
+
             </div>
         );
     }
 
 
 }
- export default EnterDeets;
+export default EnterDeets;
