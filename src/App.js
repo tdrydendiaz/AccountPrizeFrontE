@@ -57,8 +57,8 @@ export default class App extends React.Component {
 
           <Route exact path="/" render={() => <EnterDeets createAccount={this.createAccount} data={this.state.data} />} />
           <Route path="/EnterDraw" render={() => <EnterDraw id={this.state.account.id} getAll={this.onLoad} data={this.state.data} />} />
-          <Route path="/Prizegen" render={() => <Prizegen getAll={this.onLoad} data={this.state.data} />} />
-          {/* <PrizeGen /> */}
+          <Route path="/Prizegen" render={() => <Prizegen prize={this.state.account.prize} getAll={this.onLoad} data={this.state.data} />} />
+         
 
 
 

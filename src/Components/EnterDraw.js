@@ -34,10 +34,10 @@ export class EnterDraw extends Component {
             <div>
                 <p>Account Successfully Created</p>
                 <p>Your Account Number is:</p>
-                <p>{this.props.id}</p>
+                 <p>{this.props.id}</p> 
                 <h1>Would you like to enter our free prize draw</h1>
                 <form name="form" onSubmit={this.makeRequest}>
-{/* <Prize id={this.state.id}/> */}
+
                     <label for="repName" id="accUsernameLabel">Account Number: </label>
                     <input name="name" type="text" id="accUsername" class="form-control" />
                     <br />
