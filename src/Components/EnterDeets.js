@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export class EnterDeets extends Component {
@@ -9,9 +8,7 @@ export class EnterDeets extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-
         };
-
     }
 
     makeRequest = (e) => {
@@ -22,7 +19,6 @@ export class EnterDeets extends Component {
         let newAccount = {
             firstName: e.target[0].value,
             lastName: e.target[1].value,
-
         }
 
        this.props.createAccount(newAccount);
@@ -41,16 +37,11 @@ export class EnterDeets extends Component {
                     <label for="accEmail" id="accEmailLable">Last Name: </label>
                     <input name="url" type="text" id="accEmail" class="form-control" />
                     <br />
-
                     <Link to={"/EnterDraw"} id="clickLink"></Link>
                     <input name="clickme" type="submit" class="btn btn-primary" value="Create Account" />
-
                 </form>
-
             </div>
         );
     }
-
-
 }
 export default EnterDeets;
