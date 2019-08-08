@@ -32,7 +32,10 @@ export class EnterDeets extends Component {
 
 
                 this.setState({
-                    data: response.data
+                    data: response.data,
+                    id: response.data.id,
+                    firstname: response.data.firstname
+
                 });
 
                 this.props.getAll();

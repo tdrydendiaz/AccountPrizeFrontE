@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import EnterDeets from './Components/EnterDeets'
 import EnterDraw from './Components/EnterDraw'
+import Prize from './Components/Prize'
 
 
 
@@ -37,11 +38,14 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="App">
-       <Router>
-          
+        <Router>
+
 
           <Route exact path="/" render={() => <EnterDeets getAll={this.onLoad} data={this.state.data} />} />
-          <Route exact path="/EnterDraw" render={() => <EnterDraw getAll={this.onLoad} data={this.state.data} />} />
+          <Route path="/EnterDraw" render={() => <EnterDraw getAll={this.onLoad} data={this.state.data} />} />
+             <Route path="/Prize" render={() => <Prize getAll={this.onLoad} data={this.state.data} />} />
+
+
 
 
         </Router>

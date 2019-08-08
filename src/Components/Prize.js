@@ -18,8 +18,7 @@ export class Prize extends Component {
             <div>
                 <p>Congratulations, you have won!</p>
                 <p> Reveal your prize</p>
-                <button onClick={this.handleClick}>Show Prize!</button>
-                <p>{this.state.message}</p>
+                <button>Prize</button>
 
             </div>
         );
