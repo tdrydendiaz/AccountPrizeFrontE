@@ -19,6 +19,7 @@ export class Prize extends Component {
                 <p>Congratulations, you have won!</p>
                 <p> Reveal your prize</p>
                 <button>Prize</button>
+              
 
             </div>
         );

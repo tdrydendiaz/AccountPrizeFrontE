@@ -25,24 +25,7 @@ export class EnterDeets extends Component {
 
         }
 
-        axios
-            .post("http://localhost:8086/account/createAcc", newAccount)
-
-            .then(response => {
-
-
-                this.setState({
-                    data: response.data,
-                    id: response.data.id,
-                    firstname: response.data.firstname
-
-                });
-
-                this.props.getAll();
-
-
-
-            });
+       this.props.createAccount(newAccount);
 
         window.document.getElementById("clickLink").click();
 
